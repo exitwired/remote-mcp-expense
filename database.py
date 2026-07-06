@@ -1,17 +1,6 @@
 from pathlib import Path
 import sqlite3
 
-
-
-
-# -------------------
-from pathlib import Path
-
-BASE_DIR = Path(__file__).resolve().parent
-DB_PATH1 = BASE_DIR / "data" / "expenses.db"
-
-print(DB_PATH1)
-
 # -------------------
 
 # from pathlib import Path
@@ -29,20 +18,12 @@ print(DB_PATH1)
 
 # -------------------
 
-from pathlib import Path
-
-test = Path("/tmp/test.txt")
-print("Path..............:", test)
-conn = sqlite3.connect(DB_PATH1)
-cursor = conn.cursor()
-test.write_text("hello")
-print(test.read_text())
-
 import os
+import sqlite3
 from pathlib import Path
 
 DATA_DIR = Path(os.getenv("DATA_DIR", "/tmp"))
-DATA_DIR.mkdir(exist_ok=True)
+DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 DB_PATH = DATA_DIR / "expenses.db"
 
