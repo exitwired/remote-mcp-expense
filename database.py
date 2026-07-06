@@ -13,48 +13,40 @@ DB_PATH1 = BASE_DIR / "data" / "expenses.db"
 print(DB_PATH1)
 
 # -------------------
-#
+
 # from pathlib import Path
 #
 # test = Path("/app/test.txt")
-#
 # test.write_text("hello")
-#
 # print(test.read_text())
-
+#
+# BASE_DIR = Path(__file__).resolve().parent
+#
+# DATA_DIR = BASE_DIR / "data"
+# DATA_DIR.mkdir(parents=True, exist_ok=True)
+#
+# DB_PATH = DATA_DIR / "expenses.db"
 
 # -------------------
-
-BASE_DIR = Path(__file__).resolve().parent
-
-DATA_DIR = BASE_DIR / "data"
-DATA_DIR.mkdir(parents=True, exist_ok=True)
-
-DB_PATH = DATA_DIR / "expenses.db"
-
-
-# # -------------------
 
 from pathlib import Path
 
 test = Path("/tmp/test.txt")
-
+print("Path..............:", test)
+conn = sqlite3.connect(DB_PATH1)
+cursor = conn.cursor()
 test.write_text("hello")
-
 print(test.read_text())
 
-# # -------------------
-#
-# import os
-# from pathlib import Path
-#
-# DATA_DIR = Path(os.getenv("DATA_DIR", "/tmp"))
-# DATA_DIR.mkdir(exist_ok=True)
-#
-# DB_FILE = DATA_DIR / "expenses.db"
-# # -------------------
+import os
+from pathlib import Path
 
+DATA_DIR = Path(os.getenv("DATA_DIR", "/tmp"))
+DATA_DIR.mkdir(exist_ok=True)
 
+DB_PATH = DATA_DIR / "expenses.db"
+
+# -------------------
 
 def get_connection():
     return sqlite3.connect(DB_PATH)
