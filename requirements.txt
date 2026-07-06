@@ -1,0 +1,7 @@
+fastmcp==3.4.2
+mcp==1.28.1
+python-dotenv==1.2.2
+python-dateutil==2.9.0.post0
+pydantic==2.13.4
+pydantic-settings==2.14.2
+uvicorn==0.50.0
