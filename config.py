@@ -1,13 +1,25 @@
 from pathlib import Path
 import json
+import os
 import controller
 
-BASE_DIR = Path(__file__).resolve().parent
+# --------------------------------
+# local env
+# BASE_DIR = Path(__file__).resolve().parent
+#
+# DATA_DIR = BASE_DIR / "data"
+# DATA_DIR.mkdir(parents=True, exist_ok=True)
+#
+# SESSION_FILE = DATA_DIR / "session.json"
 
-DATA_DIR = BASE_DIR / "data"
+#  Remote server
+
+DATA_DIR = Path(os.getenv("DATA_DIR", "/tmp"))
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 SESSION_FILE = DATA_DIR / "session.json"
+# --------------------------------
+
 
 if not SESSION_FILE.exists():
     SESSION_FILE.write_text(

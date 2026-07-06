@@ -1,14 +1,9 @@
-from pathlib import Path
+import os
 import sqlite3
+from pathlib import Path
 
 # -------------------
 
-# from pathlib import Path
-#
-# test = Path("/app/test.txt")
-# test.write_text("hello")
-# print(test.read_text())
-#
 # BASE_DIR = Path(__file__).resolve().parent
 #
 # DATA_DIR = BASE_DIR / "data"
@@ -18,14 +13,12 @@ import sqlite3
 
 # -------------------
 
-import os
-import sqlite3
-from pathlib import Path
 
 DATA_DIR = Path(os.getenv("DATA_DIR", "/tmp"))
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 DB_PATH = DATA_DIR / "expenses.db"
+
 
 # -------------------
 
