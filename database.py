@@ -13,14 +13,14 @@ DB_PATH1 = BASE_DIR / "data" / "expenses.db"
 print(DB_PATH1)
 
 # -------------------
-
-from pathlib import Path
-
-test = Path("/app/test.txt")
-
-test.write_text("hello")
-
-print(test.read_text())
+#
+# from pathlib import Path
+#
+# test = Path("/app/test.txt")
+#
+# test.write_text("hello")
+#
+# print(test.read_text())
 
 
 # -------------------
@@ -34,15 +34,15 @@ DB_PATH = DATA_DIR / "expenses.db"
 
 
 # # -------------------
-#
-# from pathlib import Path
-#
-# test = Path("/tmp/test.txt")
-#
-# test.write_text("hello")
-#
-# print(test.read_text())
-#
+
+from pathlib import Path
+
+test = Path("/tmp/test.txt")
+
+test.write_text("hello")
+
+print(test.read_text())
+
 # # -------------------
 #
 # import os
